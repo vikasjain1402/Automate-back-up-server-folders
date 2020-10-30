@@ -8,18 +8,19 @@ def bytecount(sofar,total):
 
 
 localPath="/home/vikas/Desktop/ServerBackup/"
+os.makedirs(localPath,exist_ok=True)
 remotePaths={
               "Auth":"/mpd/auth/",
              "Static_data":"/mpd/site/",
              "Code":"/mpd/django/abcd/",
+              "Apache":"/etc/apache2/",
              "Ipdata":"/ipdata/",
              "Important_Data":"/important/",
              "Mysql":{'loc':"/mysqlBackup/",'databaseName':"vikas"}
              }
 
-
 def sync(remotePath,tarFilename):
-    ame
+    
     
     sourceFilepath=os.path.join(os.path.dirname(os.path.dirname(remotePath)),tarFilename)
     
@@ -48,7 +49,7 @@ def sync(remotePath,tarFilename):
     
 ssh_obj=paramiko.SSHClient()
 ssh_obj.load_system_host_keys()
-ssh_obj.connect(hostname="172.105.39.102",username="username",password="password")
+ssh_obj.connect(hostname="172.105.39.102",username="root",password="1@Million")
 
 
 
